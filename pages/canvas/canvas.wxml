@@ -26,7 +26,7 @@
 			<view class="canvas-btn"  style="background-image: url({{btn1}});">
 				<view  animation="{{huxi}}" class="canvas-btn2" bindtap="getLottery"  style="background-image: url({{btn2}});"></view>
 			</view>
-		
+
 		</view>
 		<view class="dizuo" style="background-image: url({{ziduo}});">
 				<view class="times">{{times}}</view>
@@ -58,7 +58,7 @@
 			<view class="prize-content">
 				<view  wx:if="{{result}}" class="image" style="background-image: url({{result.image}});"></view>
 				<view  wx:if="{{result}}" class="text">{{result.name}}</view>
-				<view  wx:if="{{result}}" class="use-btn">查看奖品</view>
+				<view  wx:if="{{result}}" class="use-btn" bindtap="use">查看奖品</view>
 			</view>
 			<view class=close" style="background-image: url({{close}});" bindtap="close"></view>
 		</view>
@@ -83,5 +83,5 @@
 			<view class=close" style="background-image: url({{close}});" bindtap="close"></view>
 		</view>
 	</view>
- 
+
 </view>
