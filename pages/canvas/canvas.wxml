@@ -1,0 +1,87 @@
+<view class="wrapper">
+	<view style="background-image: url({{bg}});" class="bg"></view>
+	<view style="background-image: url({{banner}});" class="banner"></view>
+
+	<view class="main">
+		<view class="canvas-container">
+			<view  animation="{{animationData}}" class="canvas-content" style="background-image: url({{canvas_bg}});">
+				<view class="canvas-list">
+					<view class="canvas-item" wx:for="{{awardsList}}" wx:key="unique">
+				  		<view class="canvas-item-text" style="-webkit-transform: rotate({{item.turn}});transform: rotate({{item.turn}})">{{item.award}}</view>
+					</view>
+				</view>
+
+				<view class="canvas-list">
+					<view class="canvas-item" wx:for="{{awardsList}}" wx:key="unique">
+				  		<view class="canvas-item-image" style="-webkit-transform: rotate({{item.turn}});transform: rotate({{item.turn}})">
+								<view class="canvas-item-image-inner" style="background-image: url({{item.image}});"></view>
+							</view>
+					</view>
+				</view>
+			</view>
+
+			<view class="light" style="background-image: url({{light}});"></view>
+			<view animation="{{lightAnimationData}}" class="light light1" style="background-image: url({{light}});"></view>
+
+			<view class="canvas-btn"  style="background-image: url({{btn1}});">
+				<view  animation="{{huxi}}" class="canvas-btn2" bindtap="getLottery"  style="background-image: url({{btn2}});"></view>
+			</view>
+		
+		</view>
+		<view class="dizuo" style="background-image: url({{ziduo}});">
+				<view class="times">{{times}}</view>
+		</view>
+	</view>
+
+	<view class="footer">
+		<view class="btn left" bindtap="showGuize">活动规则</view>
+		<view class="btn right" bindtap="showPrize">我的奖品</view>
+	</view>
+
+	<view class="modal {{modal === 0 ? '' : 'hide'}}">
+		<view class="guize">
+			<view class="guize-title" style="background-image: url({{guize_title}});">活动规则</view>
+			<view class="guize-content">
+				<text>活动规则：</text>
+				<text>1.每个人每天只有1次抽奖机会</text>
+				<text>2.本次活动均以优惠劵形式体现</text>
+				<text>3.中奖后没有及时领奖，优惠劵将过期失效</text>
+				<text>4.本活动由赞助商投放，用户对活动有任何问题需咨询，官方客服电话：0571-88138862 </text>
+			</view>
+			<view class=close" style="background-image: url({{close}});" bindtap="close"></view>
+		</view>
+	</view>
+
+	<view class="modal {{modal === 1 ? '' : 'hide'}}">
+		<view class="guize">
+			<view class="guize-title" style="background-image: url({{guize_title}});">我的奖品</view>
+			<view class="prize-content">
+				<view  wx:if="{{result}}" class="image" style="background-image: url({{result.image}});"></view>
+				<view  wx:if="{{result}}" class="text">{{result.name}}</view>
+				<view  wx:if="{{result}}" class="use-btn">查看奖品</view>
+			</view>
+			<view class=close" style="background-image: url({{close}});" bindtap="close"></view>
+		</view>
+	</view>
+
+	<view class="modal {{modal === 2 ? '' : 'hide'}}">
+		<view class="result" style="background-image: url({{modal_bg}});">
+			<view class="body">
+				<view class="card {{fade === 1 ? 'fade' : ''}} {{back1? 'back' : ''}}" bindtap="click1">
+					<view class="card1" style="background-image: url({{card1}});"></view>
+					<view class="card2" style="background-image: url({{cards[0]}});"></view>
+				</view>
+				<view class="card  {{fade === 2 ? 'fade' : ''}}  {{back2? 'back' : ''}}" bindtap="click2">
+					<view class="card1" style="background-image: url({{card1}});"></view>
+					<view class="card2" style="background-image: url({{cards[1]}});"></view>
+				</view>
+				<view class="card  {{fade === 3 ? 'fade' : ''}}  {{back3? 'back' : ''}}" bindtap="click3">
+					<view class="card1" style="background-image: url({{card1}});"></view>
+					<view class="card2" style="background-image: url({{cards[2]}});"></view>
+				</view>
+			</view>
+			<view class=close" style="background-image: url({{close}});" bindtap="close"></view>
+		</view>
+	</view>
+ 
+</view>

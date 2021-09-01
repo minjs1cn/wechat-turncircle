@@ -1,0 +1,381 @@
+page {
+  background: #e3402f;
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+}
+
+
+.bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 750rpx;
+  height: 1226rpx;
+  background-size: 100%;
+  background-color: #e3402f;
+}
+
+.banner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 750rpx;
+  height: 338rpx;
+  background-size: 100%;
+  z-index: 1;
+}
+
+.main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 338rpx;
+  z-index: 999;
+  height: 1000rpx;
+}
+
+/* 转盘 */
+.canvas-container ul,
+.canvas-container li{
+  margin: 0 ;
+  padding: 0;
+  list-style: none;
+}
+
+.canvas-container{
+  margin: 0 auto;
+  position: relative;
+  width: 720rpx;
+  height: 720rpx;  
+  border-radius: 50%;
+  background-color: #ffb400;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.light {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 720rpx;
+  height: 720rpx;
+  background-size: 100%;
+}
+
+.light1 {
+  transform: rotate(15deg);
+}
+
+.canvas-content{
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  z-index: 1;
+  display: block;
+  width: 660rpx;
+  height: 660rpx;
+  border-radius: inherit;
+  background-clip: padding-box;
+  background-size: 100%;
+  
+}
+.canvas-bg {
+  width: 100%;
+  height: 100%;
+}
+.canvas-element{
+  position: relative;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+.canvas-list{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  z-index: 9999;
+}
+.canvas-item{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #e4370e;
+  /* font-weight: bold; */
+  /* text-shadow: 0 1px 1px rgba(255,255,255,.6); */
+}
+.canvas-item-text{
+  position: relative;
+  display: block;
+  padding-top: 20rpx;
+  /* width: 50px; */
+  margin: 0 auto;
+  text-align: center; 
+  -webkit-transform-origin: 50% 330rpx; 
+  transform-origin: 50% 330rpx;
+}
+
+.canvas-item-image {
+  display: block;
+  text-align: center;
+  padding: 80rpx 0;
+  -webkit-transform-origin: 50% 330rpx; 
+  transform-origin: 50% 330rpx;
+}
+
+.canvas-item-image-inner {
+  margin: 0 auto;
+  width: 100rpx;
+  height: 100rpx;
+  background-size: 100%;
+}
+
+.canvas-litem{
+  position: absolute;
+   left: 150rpx;
+   top: 0;
+   width: 1rpx;
+   height: 150rpx;
+   background-color: rgba(228,55,14,.4);
+   overflow: hidden; 
+   -webkit-transform-origin: 50% 150rpx; 
+   transform-origin: 50% 150rpx;
+}
+
+.canvas-btn{
+  position: absolute;
+  left: 240rpx;
+  top: 220rpx;
+  width: 243rpx;
+  height: 274rpx;
+  background-size: 100%;
+  z-index: 99;
+  text-align: center;
+}
+
+.canvas-btn2{
+  position: absolute;
+  left: 34rpx;
+  bottom: 45rpx;
+  display: block;
+  width: 178rpx;
+  height: 178rpx;
+  background-size: 100%;
+}
+
+.dizuo {
+  position: absolute;
+  width: 720rpx;
+  height: 352rpx;
+  background-size: 100%;
+  bottom: -120rpx;
+  margin-bottom: 100rpx;
+}
+
+.times {
+  text-align: center;
+  padding-top: 240rpx;
+  color: #fff;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+}
+
+.footer .btn {
+  width: 240rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background-color: #cc9000;
+  border-radius: 40rpx;
+}
+
+/* 查看中奖 */
+.main-container{
+	margin: 1rem 2rem;
+}
+
+.main-container-rule{
+	padding: 1rem 0;
+}
+.main-rule-title{
+	display: block;
+	padding: 4px 0;
+	font-size: 16px;
+	font-weight: bold;
+}
+.main-rule-item{
+	display: block;
+	padding: 2px 0;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.68);
+  color: #fff;
+  font-size: 40rpx;
+  z-index: 9999;
+}
+
+.modal.hide {
+  display: none;
+}
+
+.guize {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700rpx;
+  background-color: #f17853;
+  border-radius: 30rpx;
+}
+
+.guize-title {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -100rpx);
+  background-size: 100%;
+  width: 594rpx;
+  height: 132rpx;
+  text-align: center;
+  padding-top: 25rpx;
+  color: #333;
+}
+
+.guize-content {
+  padding: 30rpx 40rpx;
+}
+
+.guize-content text {
+  display: block;
+  margin-bottom: 16rpx;
+  font-size: 30rpx;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background-size: 100%;
+}
+
+.prize-content {
+  display: flex;
+  min-height: 300rpx;
+  padding: 75rpx 20rpx;
+  align-items: center;
+}
+
+.prize-content .image {
+  width: 150rpx;
+  height: 150rpx;
+  background-size: 100%;
+}
+
+.prize-content .use-btn {
+  margin-left: 100rpx;
+  color: #fdd010;
+}
+
+.result {
+  width: 750rpx;
+  height: 1206rpx;
+  background-size: 100%;
+  transition: all 3s;
+  transform: scale(1);
+  transform-origin: center center;
+}
+
+.modal.hide .result {
+  transform: scale(0);
+}
+
+	
+.result .close {
+  left: 50%;
+  top: 1000rpx;
+  transform: translate(-50%);
+}
+
+.body {
+  position: absolute;
+  width: 700rpx;
+  height: 300rpx;
+  left: 50%;
+  top: 620rpx;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card {
+  position: relative;
+  width: 230rpx;
+  height: 300rpx;
+  transition: all 0.3s;
+  opacity: 0.6;
+}
+
+.card.fade {
+  opacity: 1;
+}
+
+.card1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 230rpx;
+  height: 300rpx;
+  background-size: 100%;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.card.back {
+  opacity: 1;
+}
+
+.card.back .card1 {
+  opacity: 0;
+}
+
+.card2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 230rpx;
+  height: 300rpx;
+  background-size: 100%;
+  transition: all 1s;
+  transform: rotateY(180deg);
+}
+
+.card.back .card2 {
+  transform: rotateY(0deg);
+}
