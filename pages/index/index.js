@@ -122,7 +122,7 @@ Page({
 	},
 	use: function () {
 		wx.navigateToMiniProgram({
-			appId: '',
+			appId: 'wxd62ee74e64a843aa',
 			path: 'packages/user/coupon/detail/index?type=promocard&id=11836493&alias=2726csmt&sign=f8a4c62aeb32db75655013c818e8fa92&shopAutoEnter=1',
 		});
 	},
