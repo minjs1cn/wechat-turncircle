@@ -1,6 +1,6 @@
 var app = getApp();
-const { set } = require('./localStorage');
 var localStorage = require('./localStorageWithTime');
+var host = 'https://m.ichaozhun.top';
 
 function getTimes() {
 	let times = 0;
@@ -16,16 +16,51 @@ function getTimes() {
 app.awardsConfig = {
 	chance: true,
 	awards: [
-		{ index: 0, name: '50元红包', image: '/image/1.fe435c7a.png' },
-		{ index: 1, name: '谢谢参与', image: '/image/2.aeddf42c.png' },
-		{ index: 2, name: '智能扫地机', image: '/image/3.4f7b9dfa.png' },
-		{ index: 3, name: '谢谢参与', image: '/image/4.aeddf42c.png' },
-		{ index: 4, name: 'iPhone12', image: '/image/5.aa7d840f.png' },
-		{ index: 5, name: '100元话费卡', image: '/image/6.a7e75d49.png' },
-		{ index: 6, name: '空气净化器', image: '/image/7.54bd7f52.png' },
-		{ index: 7, name: '谢谢参与', image: '/image/8.aeddf42c.png' },
+		{
+			index: 0,
+			name: '50元红包',
+			image: host + '/img/1.fe435c7a.png',
+		},
+		{
+			index: 1,
+			name: '谢谢参与',
+			image: host + '/img/2.aeddf42c.png',
+		},
+		{
+			index: 2,
+			name: '智能扫地机',
+			image: host + '/img/3.4f7b9dfa.png',
+		},
+		{
+			index: 3,
+			name: '谢谢参与',
+			image: host + '/img/4.aeddf42c.png',
+		},
+		{
+			index: 4,
+			name: 'iPhone12',
+			image: host + '/img/5.aa7d840f.png',
+		},
+		{
+			index: 5,
+			name: '100元话费卡',
+			image: host + '/img/6.a7e75d49.png',
+		},
+		{
+			index: 6,
+			name: '空气净化器',
+			image: host + '/img/7.54bd7f52.png',
+		},
+		{
+			index: 7,
+			name: '谢谢参与',
+			image: host + '/img/8.aeddf42c.png',
+		},
 	],
 };
+
+var cardNo =
+	'https://yun.tuisnake.com/jimu-web/8ac66285-20200421-%E8%B4%A7%E5%88%B0-%E6%89%AB%E5%9C%B0%E6%9C%BA%E7%BF%BB%E7%89%8C%E5%AD%90-%E8%88%92%E8%90%8D_06.png';
 
 Page({
 	data: {
@@ -33,26 +68,25 @@ Page({
 		animationData: {},
 		btnDisabled: '',
 		huxi: {},
-		banner: '/image/banner.3dcc1472.png',
-		bg: '/image/bg.9ab4f71a.jpg',
-		canvas_bg: '/image/bg.png',
-		light: '/image/light.png',
-		btn2: '/image/97a10a5cbd0c9cf3f606.22039f9e.png',
-		btn1: '/image/5ee82ba891e04abd3eb7.d4b7902b.png',
-		ziduo: '/image/dizuo.ec8266b3.png',
+		banner: host + '/img/banner.3dcc1472.png',
+		bg: host + '/img/bg.9ab4f71a.jpg',
+		canvas_bg: host + '/img/bg.png',
+		light: host + '/img/light.png',
+		btn2: host + '/img/97a10a5cbd0c9cf3f606.22039f9e.png',
+		btn1: host + '/img/5ee82ba891e04abd3eb7.d4b7902b.png',
+		ziduo: host + '/img/dizuo.ec8266b3.png',
 		lightAnimationData: {},
 		times: '今日剩余：1次',
-		guize_title: '/image/titles.84aa5c34.png',
-		close: '/image/close.png',
+		guize_title: host + '/img/titles.84aa5c34.png',
+		close: 'https://yun.tuisnake.com/h5-mami/dist/close.png',
 		result: null,
-		modal_bg: '/image/e7d8442c-37614c5a-1622096086696.png',
-		card1: '/image/card1.png',
-		cards: [
-			'/image/card2-no.png',
-			'/image/card2-no.png',
-			'/image/card2-no.png',
-		],
-		card2: '/image/card2-yes.png',
+		modal_bg:
+			'https://yun.tuisnake.com/jimu-web/e7d8442c-37614c5a-1622096086696.png',
+		card1:
+			'https://yun.tuisnake.com/jimu-web/3a3a0e29-20200421-%E8%B4%A7%E5%88%B0-%E6%89%AB%E5%9C%B0%E6%9C%BA%E7%BF%BB%E7%89%8C%E5%AD%90-%E8%88%92%E8%90%8D_03.png',
+		cards: [cardNo, cardNo, cardNo],
+		card2:
+			'https://yun.tuisnake.com/jimu-web/79ae72fb-20200421-%E8%B4%A7%E5%88%B0-%E6%89%AB%E5%9C%B0%E6%9C%BA%E7%BF%BB%E7%89%8C%E5%AD%90-%E8%88%92%E8%90%8D_04.png',
 		modal: -1,
 		back1: false,
 		back2: false,
@@ -331,9 +365,6 @@ Page({
 			len = awardsConfig.length,
 			html = [],
 			turnNum = 1 / len; // 文字旋转 turn 值
-		that.setData({
-			btnDisabled: app.awardsConfig.chance ? '' : 'disabled',
-		});
 
 		for (var i = 0; i < len; i++) {
 			// 奖项列表
